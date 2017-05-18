@@ -34,7 +34,7 @@ class MainHandler(BaseHandler):
 
 class LotoHandler(BaseHandler):
     def get(self):
-        numbers = loto_numbers(8)
+        numbers = loto_numbers(8)                #8 is lenght of loto_numbers
 
         params = {"numbers": numbers}
         return self.render_template( "loto.html", params=params )
@@ -43,21 +43,16 @@ class LotoHandler(BaseHandler):
 def loto_numbers(length):
     loto_list = []
 
-
     while True:
 
         if len(loto_list) == length:
             break
 
         number = random.randint( 1, 39 )
-        if number not in loto_list:
+        if number not in loto_list:       #if not in loto_list, append it
             loto_list.append(number)
 
     return loto_list
-
-
-
-
 
 
 app = webapp2.WSGIApplication([
