@@ -31,6 +31,11 @@ class MainHandler(BaseHandler):
     def get(self):
         return self.render_template("hello.html")
 
+class LotoHandler(BaseHandler):
+    def get(self):
+        return self.render_template("loto.html")
+
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+    webapp2.Route("/loto", LotoHandler),
 ], debug=True)
