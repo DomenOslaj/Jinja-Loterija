@@ -2,6 +2,7 @@
 import os
 import jinja2
 import webapp2
+import random
 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
@@ -33,7 +34,31 @@ class MainHandler(BaseHandler):
 
 class LotoHandler(BaseHandler):
     def get(self):
-        return self.render_template("loto.html")
+        numbers = loto_numbers(8)
+
+        params = {"numbers": numbers}
+        return self.render_template( "loto.html", params=params )
+
+
+def loto_numbers(length):
+    loto_list = []
+
+
+    while True:
+
+        if len(loto_list) == length:
+            break
+
+        number = random.randint( 1, 39 )
+        if number not in loto_list:
+            loto_list.append(number)
+
+    return loto_list
+
+
+
+
+
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
