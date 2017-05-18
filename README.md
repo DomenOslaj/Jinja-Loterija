@@ -1,2 +1,3 @@
 # Jinja-Loterija
-Domača naloga 15.3: Loterija (spet)  Naredi spletno aplikacijo, ki ti pomaga pri izbiri LOTO številk Prva stran naj bo normalna HTML spletna stran, ki te vpraša, ali bi rad generiral 8 naključnih LOTO števil. Ta stran naj bo v rootu spletne strani (/) Ko klikneš na gumb, te ta vrže na naslov /loto, ki ga kontrolira LotoHandler LotoHandler naj generira 8 naključnih števil med 1 in 39, ter jih preko params pošlje v loto.html, kjer jih z Jinjo prikažeš.
+Homework 15.3
+Instructions in "Homework instructions.txt"
